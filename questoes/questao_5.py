@@ -45,71 +45,72 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    MAX_KEY_SIZE = 26
- 
- 
-	def getTranslatedMessage(message, key):
-	    translated = ''
+
+    TAMANHO_MAX = 26
+  
+	def getCifraCesar(message, key):
+	    tradutor = ''
 	 
-	    for symbol in message:
+	    for simbolo in message:
 	 
-		if symbol.isalpha():
+	        if simbolo.isalpha():
 	 
-		    num = ord(symbol)
+	            num = ord(simbolo)
 	 
-		    num += key
+	            num += key
 	 
-		    if symbol.isupper():
+	            if simbolo.isupper():
 	 
-		        if num > ord('Z'):
+	                if num > ord('Z'):
 	 
-		            num -= 26
+	                    num -= 26
 	 
-		        elif num < ord('A'):
+	                elif num < ord('A'):
 	 
-		            num += 26
+	                    num += 26
 	 
-		    elif symbol.islower():
+	            elif simbolo.islower():
 	 
-		        if num > ord('z'):
+	                if num > ord('z'):
 	 
-		            num -= 26
+	                    num -= 26
 	 
-		        elif num < ord('a'):
+	                elif num < ord('a'):
 	 
-		            num += 26
+	                    num += 26
 	 
-		    translated += chr(num)
+	            tradutor += chr(num)
 	 
-		else:
+	        else:
 	 
-		    translated += symbol
+	            tradutor += simbolo
 	 
-	    return translated
+	    return tradutor
 	 
 	 
 	flag = 0
-	keyinput = input('Digite o ROT (Maisculo) que deseja mais a frase que deseja codificar: ')
+	keyinput = input('Digite o ROT (Maiuscúlo) que deseja, juntamente com a frase que deseja codificar: ')
 	rot = keyinput.split(' ', 1)
 	keys = rot[0].split('ROT', 1)
+
 	if keys[0] != '':
-	    print('Error')
+	    print('Erro!!')
 	 
 	else:
-	    key0 = keys[1]
-	    ms = rot[1]
+	    cifra = keys[1]
+	    msg = rot[1]
 	    for i in rot[1]:
-		if i.isnumeric() == True:
-		    flag = 1
-		else:
-		    continue
-	    if (key0.isnumeric() == False) or (int(key0) < 0 or int(key0) > MAX_KEY_SIZE) or (flag == 1):
-		print('Error')
+	        if i.isnumeric() == True:
+	            flag = 1
+	        else:
+	            continue
+	    if (cifra.isnumeric() == False) or (int(cifra) < 0 or int(cifra) > TAMANHO_MAX) or (flag == 1):
+	        print('Error')
 	 
 	 
 	    else:
-		key = int(key0)
-		print(getTranslatedMessage(ms, key))
+	        key = int(cifra)
+	        print(getCifraCesar(msg, key))
 
 
     
