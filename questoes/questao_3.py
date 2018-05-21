@@ -38,10 +38,11 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    posCima = 0
-posBaixo = 0
-posDireita = 0
-posEsquerda = 0
+	
+    	posCima = 0
+	posBaixo = 0
+	posDireita = 0
+	posEsquerda = 0
 
 def roboPosicionamento(posicao):
 	global posCima
