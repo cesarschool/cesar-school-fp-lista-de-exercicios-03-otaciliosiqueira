@@ -44,11 +44,6 @@ def main():
 		minhaLista.append((tuple(tuplaEntrada)))
 	print(sorted(tuple(minhaLista), key=itemgetter(0,1,2)))
 
-
-
-
-
-
     
 if __name__ == '__main__':
     main()
