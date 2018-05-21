@@ -34,7 +34,19 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 4")
+	from operator import itemgetter
+	minhaLista = []
+	while True:
+		tuplaEntrada = input('Digite o nome, sua idade e a sua pontuação: ')
+		if tuplaEntrada == '':
+			break
+		tuplaEntrada = tuplaEntrada.split(',')
+		minhaLista.append((tuple(tuplaEntrada)))
+	print(sorted(tuple(minhaLista), key=itemgetter(0,1,2)))
+
+
+
+
 
 
     

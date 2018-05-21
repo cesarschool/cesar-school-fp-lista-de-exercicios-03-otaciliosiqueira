@@ -38,7 +38,41 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 3")
+    posCima = 0
+posBaixo = 0
+posDireita = 0
+posEsquerda = 0
+
+def roboPosicionamento(posicao):
+	global posCima
+	global posBaixo
+	global posDireita
+	global posEsquerda
+
+	posicao = posicao.split()
+
+	if posicao[0] == 'CIMA':
+	posCima += int(posicao[1])
+	if posicao[0] == 'BAIXO':
+	posBaixo += int(posicao[1])
+	if posicao[0] == 'ESQUERDA':
+	posDireita += int(posicao[1])
+	if posicao[0] == 'DIREITA':
+	posEsquerda += int(posicao[1])
+
+
+	while True:
+		posicao = input('Digite o Comando: ').upper()
+
+		if posicao == '':
+		break
+		else:
+		roboPosicionamento(posicao)
+		continue
+
+	distancia = ((posCima - posBaixo)**2 + (posDireita - posEsquerda)**2)**(1/2)
+	distancia = round(distancia)
+	print('A distância está em {}' .format(distancia))
 
 
     
